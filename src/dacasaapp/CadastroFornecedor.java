@@ -10,6 +10,7 @@
  */
 package dacasaapp;
 
+import controle.ControlaFornecedor;
 import dao.DaoFornecedor;
 import javax.swing.JOptionPane;
 import modelo.Fornecedor;
@@ -204,8 +205,8 @@ JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
     fornecedor.setTelefone(this.telefoneCf.getText());
     fornecedor.setCnpj(this.cnpjCf.getText());
     fornecedor.setRazaoSocial(this.razsocCf.getText());
-    DaoFornecedor daof= new DaoFornecedor();
-    daof.insert(fornecedor);
+    ControlaFornecedor controlador = new ControlaFornecedor();
+    controlador.cadastraFornecedor(fornecedor);
     
     
     JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
