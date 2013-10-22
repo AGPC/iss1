@@ -12,6 +12,7 @@ package dacasaapp;
 import dao.DaoCliente;
 import javax.swing.JOptionPane;
 import modelo.Cliente;
+import controle.ControlaCliente;
 
 /**
  *
@@ -264,8 +265,9 @@ JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
      //cliente.setCnpj(this.cnpjCc.getText());   
     }
    
-    DaoCliente daoc= new DaoCliente();
-    daoc.insert(cliente);
+
+    ControlaCliente controlador = new ControlaCliente();
+    controlador.cadastraCliente(cliente);
     JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
     this.setVisible(false);
 }
@@ -283,19 +285,17 @@ cnpjCc.setEditable(jRadioButton1.isSelected());// TODO add your handling code he
 }//GEN-LAST:event_jRadioButton2ActionPerformed
 
 private void jRadioButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton2MouseClicked
-if(jRadioButton1.isSelected() || (!(jRadioButton2.isSelected()))){
-    jRadioButton1.doClick();
+if(jRadioButton1.isSelected()){
+jRadioButton1.doClick();
 }
-
 
     // TODO add your handling code here:
 }//GEN-LAST:event_jRadioButton2MouseClicked
 
 private void jRadioButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton1MouseClicked
-if(jRadioButton2.isSelected() || (!(jRadioButton1.isSelected()))){
-    jRadioButton2.doClick();
+if(jRadioButton2.isSelected()){
+jRadioButton2.doClick();
 }
-
     // TODO add your handling code here:
 }//GEN-LAST:event_jRadioButton1MouseClicked
 

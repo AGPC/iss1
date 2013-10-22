@@ -56,6 +56,7 @@ public class Produto implements Serializable {
     @Basic(optional = false)
     @Column(name = "quantidade")
     private int quantidade;
+    private String Descricao;
 
     public Produto() {
     }
@@ -64,9 +65,9 @@ public class Produto implements Serializable {
         this.idProduto = idProduto;
     }
 
-    public Produto(Integer idProduto, String decricao, String marca, float preco, int quantidade) {
+    public Produto(Integer idProduto, String Descricao, String marca, float preco, int quantidade) {
         this.idProduto = idProduto;
-        this.decricao = decricao;
+        this.Descricao = Descricao;
         this.marca = marca;
         this.preco = preco;
         this.quantidade = quantidade;
@@ -80,12 +81,12 @@ public class Produto implements Serializable {
         this.idProduto = idProduto;
     }
 
-    public String getDecricao() {
-        return decricao;
+    public String getDescricao() {
+        return Descricao;
     }
 
-    public void setDecricao(String decricao) {
-        this.decricao = decricao;
+    public void setDescricao(String decricao) {
+        this.Descricao = Descricao;
     }
 
     public String getMarca() {
@@ -162,6 +163,14 @@ public class Produto implements Serializable {
 
     public void setItemcompraCollection(Collection<Itemcompra> itemcompraCollection) {
         this.itemcompraCollection = itemcompraCollection;
+    }
+
+    public void setPreco(String text) {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    public void setQuantidade(String text) {
+        throw new UnsupportedOperationException("Not yet implemented");
     }
     
 }

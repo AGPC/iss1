@@ -12,7 +12,8 @@ package dacasaapp;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-
+import modelo.Venda;
+import controle.ControlaVenda;
 /**
  *
  * @author Luiz
@@ -360,6 +361,14 @@ ConfirmaçaoDeOrçamento cv=new ConfirmaçaoDeOrçamento();
 
 private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
 ConfirmacaoDeVenda cv=new ConfirmacaoDeVenda(this);
+Venda venda=new Venda();
+venda.setData(dataNv.getText());
+venda.setClienteidCliente(clienteNv.getText());
+venda.setVendedoridVendedor(vendedorNv.getText());
+venda.setItemvendaCollection(jTable1.getComponentListeners());
+venda.setValorTotal(jTextField1.getText());
+ControlaVenda controlador = new ControlaVenda();
+controlador.cadastraVenda(venda);
     cv.setVisible(true);
     cv.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);// TODO add your handling code here:
 }//GEN-LAST:event_jButton6ActionPerformed

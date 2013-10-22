@@ -9,9 +9,10 @@
  * Created on 22/05/2013, 11:17:18
  */
 package dacasaapp;
-
+import dao.DaoFornecedor;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import modelo.Fornecedor;
 
 /**
  *
@@ -94,6 +95,11 @@ NovaCompra compra;
 
         jButton3.setText(resourceMap.getString("jButton3.text")); // NOI18N
         jButton3.setName("jButton3"); // NOI18N
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -224,6 +230,12 @@ private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jTable1.setValueAt("(44)1111-1111", 0, 2);
         jTable1.setValueAt("123456789", 0, 3);
 }//GEN-LAST:event_jButton3ActionPerformed
+
+private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+
+    
+    // TODO add your handling code here:
+}//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments

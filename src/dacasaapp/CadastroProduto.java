@@ -9,8 +9,9 @@
  * Created on 22/05/2013, 11:14:07
  */
 package dacasaapp;
-
+import controle.ControlaProduto;
 import javax.swing.JOptionPane;
+import modelo.Produto;
 
 /**
  *
@@ -209,6 +210,13 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 if(codigoCp.getText().equals("") || descricaoCp.getText().equals("") || marcaCp.getText().equals("") || precoCp.getText().equals("") || quantidadeCp.getText().equals("")){
     JOptionPane.showMessageDialog(null, "Preecha todos os campos");
 }else{
+    Produto produto=new Produto();
+    produto.setDescricao(this.descricaoCp.getText());
+    produto.setMarca(this.marcaCp.getText());
+    produto.setPreco(this.precoCp.getText());
+    produto.setQuantidade(this.quantidadeCp.getText());
+    ControlaProduto controlador = new ControlaProduto();
+    controlador.cadastraProduto(produto);
     JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
     this.setVisible(false);
 }

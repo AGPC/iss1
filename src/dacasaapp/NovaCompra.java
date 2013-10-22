@@ -13,6 +13,7 @@ import dao.DaoCompra;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.Compra;
+import controle.ControlaCompra;
 /**
  *
  * @author Luiz
@@ -294,7 +295,12 @@ jFormattedTextField1.setText(((Double)jTable1.getValueAt(0, 3))+((Double)jTable1
 }//GEN-LAST:event_jButton3ActionPerformed
 
 private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
- /*Compra compra = new Compra();
+Compra compra=new Compra();
+compra.setData(dataNc.getText());
+compra.setFornecedoridFornecedor(fornecedorNc.getText());
+compra.setItemcompraCollection(jTable1.getComponentListeners());
+compra.setValorTotal(jFormattedTextField1.getText());
+/*Compra compra = new Compra();
  compra.setData(this.dataNc);
  compra.setFornecedor(this.fornecedorNc.getNome());
  vendedor.setLogin(this.loginCv.getText());
@@ -302,6 +308,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
  vendedor.setCpf(this.cpfCv.getText());
  DaoVendedor daov= new DaoVendedor();
  daov.insert(vendedor);*/
+ControlaCompra controlador = new ControlaCompra();
+controlador.cadastraCompra(compra);
 JOptionPane.showMessageDialog(null, "Compra Finalizada");
 this.setVisible(false);
 // TODO add your handling code here:

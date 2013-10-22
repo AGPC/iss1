@@ -13,6 +13,7 @@ package dacasaapp;
 import dao.DaoVendedor;
 import javax.swing.JOptionPane;
 import modelo.Vendedor;
+import controle.ControlaVendedor;
 /**
  *
  * @author Luiz
@@ -216,8 +217,8 @@ JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
     vendedor.setLogin(this.loginCv.getText());
     vendedor.setSenha(this.senhaCv.getText());
     vendedor.setCpf(this.cpfCv.getText());
-    DaoVendedor daov= new DaoVendedor();
-    daov.insert(vendedor);
+    ControlaVendedor controlador = new ControlaVendedor();
+    controlador.cadastraVendedor(vendedor);
     JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
     this.setVisible(false);
 }

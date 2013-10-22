@@ -47,7 +47,7 @@ public class Compra implements Serializable {
     private Date data;
     @Basic(optional = false)
     @Column(name = "valorToral")
-    private float valorToral;
+    private float valorTotal;
     @JoinColumn(name = "Fornecedor_idFornecedor", referencedColumnName = "idFornecedor")
     @ManyToOne(optional = false)
     private Fornecedor fornecedoridFornecedor;
@@ -61,10 +61,10 @@ public class Compra implements Serializable {
         this.idCompra = idCompra;
     }
 
-    public Compra(Integer idCompra, Date data, float valorToral) {
+    public Compra(Integer idCompra, Date data, float valorTotal) {
         this.idCompra = idCompra;
         this.data = data;
-        this.valorToral = valorToral;
+        this.valorTotal = valorTotal;
     }
 
     public Integer getIdCompra() {
@@ -83,12 +83,12 @@ public class Compra implements Serializable {
         this.data = data;
     }
 
-    public float getValorToral() {
-        return valorToral;
+    public float getValorTotal() {
+        return valorTotal;
     }
 
-    public void setValorToral(float valorToral) {
-        this.valorToral = valorToral;
+    public void setValorTotal(float valorTotal) {
+        this.valorTotal = valorTotal;
     }
 
     public Fornecedor getFornecedoridFornecedor() {

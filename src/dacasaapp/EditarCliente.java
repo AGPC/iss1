@@ -265,10 +265,17 @@ JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
 }                                        
 
 private void jRadioButton2MouseClicked(java.awt.event.MouseEvent evt) {                                           
+if(jRadioButton1.isSelected()){
+jRadioButton1.doClick();
+}
 
 }
     // TODO add your handling code here:
-                                          
+private void jRadioButton1MouseClicked(java.awt.event.MouseEvent evt) {                                           
+if(jRadioButton2.isSelected()){
+jRadioButton2.doClick();
+}
+}                                          
 
     /**
      * @param args the command line arguments
