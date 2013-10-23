@@ -51,9 +51,10 @@ public class ConsultaCompra extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(dacasaapp.DaCasaApp.class).getContext().getResourceMap(ConsultaCompra.class);
+        setTitle(resourceMap.getString("Form.title")); // NOI18N
         setName("Form"); // NOI18N
 
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(dacasaapp.DaCasaApp.class).getContext().getResourceMap(ConsultaCompra.class);
         jButton3.setText(resourceMap.getString("jButton3.text")); // NOI18N
         jButton3.setName("jButton3"); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {

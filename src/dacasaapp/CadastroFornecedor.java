@@ -37,10 +37,8 @@ public class CadastroFornecedor extends javax.swing.JFrame {
 
         codigoCf = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        cnpjCf = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        telefoneCf = new javax.swing.JFormattedTextField();
         jButton1 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         razsocCf = new javax.swing.JTextField();
@@ -52,27 +50,26 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        telefoneCf = new javax.swing.JFormattedTextField();
+        cnpjCf = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(dacasaapp.DaCasaApp.class).getContext().getResourceMap(CadastroFornecedor.class);
+        setTitle(resourceMap.getString("Form.title")); // NOI18N
         setName("Form"); // NOI18N
 
         codigoCf.setEditable(false);
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(dacasaapp.DaCasaApp.class).getContext().getResourceMap(CadastroFornecedor.class);
         codigoCf.setText(resourceMap.getString("codigoCf.text")); // NOI18N
         codigoCf.setName("codigoCf"); // NOI18N
 
         jLabel1.setText(resourceMap.getString("jLabel1.text")); // NOI18N
         jLabel1.setName("jLabel1"); // NOI18N
 
-        cnpjCf.setName("cnpjCf"); // NOI18N
-
         jLabel3.setText(resourceMap.getString("jLabel3.text")); // NOI18N
         jLabel3.setName("jLabel3"); // NOI18N
 
         jButton2.setText(resourceMap.getString("jButton2.text")); // NOI18N
         jButton2.setName("jButton2"); // NOI18N
-
-        telefoneCf.setName("telefoneCf"); // NOI18N
 
         jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
         jButton1.setName("jButton1"); // NOI18N
@@ -110,6 +107,25 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         jLabel10.setText(resourceMap.getString("jLabel10.text")); // NOI18N
         jLabel10.setName("jLabel10"); // NOI18N
 
+        try {
+            telefoneCf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        telefoneCf.setName("telefoneCf"); // NOI18N
+        telefoneCf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                telefoneCfActionPerformed(evt);
+            }
+        });
+
+        try {
+            cnpjCf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###/####-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        cnpjCf.setName("cnpjCf"); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -125,23 +141,23 @@ public class CadastroFornecedor extends javax.swing.JFrame {
                         .addGap(37, 37, 37)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(telefoneCf, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nomeCf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(telefoneCf)
+                                    .addComponent(nomeCf, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
                                     .addComponent(jLabel8)))
                             .addComponent(codigoCf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(124, 124, 124))
+                        .addGap(128, 128, 128))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addComponent(jLabel7))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cnpjCf, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
-                            .addComponent(razsocCf, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE))
+                            .addComponent(cnpjCf, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                            .addComponent(razsocCf, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9)
@@ -151,10 +167,10 @@ public class CadastroFornecedor extends javax.swing.JFrame {
                         .addComponent(jButton2)
                         .addGap(103, 103, 103)
                         .addComponent(jButton1)
-                        .addContainerGap(145, Short.MAX_VALUE))
+                        .addContainerGap(149, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
-                        .addContainerGap(284, Short.MAX_VALUE))))
+                        .addContainerGap(288, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,8 +187,8 @@ public class CadastroFornecedor extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(telefoneCf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
+                    .addComponent(jLabel8)
+                    .addComponent(telefoneCf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -180,9 +196,9 @@ public class CadastroFornecedor extends javax.swing.JFrame {
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cnpjCf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel10))
+                    .addComponent(jLabel10)
+                    .addComponent(cnpjCf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
@@ -214,6 +230,10 @@ JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
 }
 // TODO add your handling code here:
 }//GEN-LAST:event_jButton1ActionPerformed
+
+private void telefoneCfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefoneCfActionPerformed
+// TODO add your handling code here:
+}//GEN-LAST:event_telefoneCfActionPerformed
 
     /**
      * @param args the command line arguments
@@ -251,7 +271,7 @@ JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField cnpjCf;
+    private javax.swing.JFormattedTextField cnpjCf;
     private javax.swing.JTextField codigoCf;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

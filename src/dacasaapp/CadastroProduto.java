@@ -52,6 +52,8 @@ public class CadastroProduto extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(dacasaapp.DaCasaApp.class).getContext().getResourceMap(CadastroProduto.class);
+        setTitle(resourceMap.getString("Form.title")); // NOI18N
         setName("Form"); // NOI18N
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentHidden(java.awt.event.ComponentEvent evt) {
@@ -60,7 +62,6 @@ public class CadastroProduto extends javax.swing.JFrame {
         });
 
         codigoCp.setEditable(false);
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(dacasaapp.DaCasaApp.class).getContext().getResourceMap(CadastroProduto.class);
         codigoCp.setText(resourceMap.getString("codigoCp.text")); // NOI18N
         codigoCp.setName("codigoCp"); // NOI18N
 
@@ -72,6 +73,7 @@ public class CadastroProduto extends javax.swing.JFrame {
 
         quantidadeCp.setName("quantidadeCp"); // NOI18N
 
+        precoCp.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
         precoCp.setName("precoCp"); // NOI18N
 
         jLabel5.setText(resourceMap.getString("jLabel5.text")); // NOI18N
@@ -136,8 +138,7 @@ public class CadastroProduto extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(2, 2, 2)
-                                .addComponent(jLabel1)
-                                .addGap(21, 21, 21))
+                                .addComponent(jLabel1))
                             .addComponent(jLabel5)
                             .addComponent(jLabel4)
                             .addComponent(jLabel3)

@@ -41,12 +41,10 @@ NovaVenda nv;
 
         porcdescCv = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        valortotalCv = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        valorfinalCv = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         formapagCv = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
@@ -57,8 +55,12 @@ NovaVenda nv;
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        valortotalCv = new javax.swing.JFormattedTextField();
+        valorfinalCv = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(dacasaapp.DaCasaApp.class).getContext().getResourceMap(ConfirmacaoDeVenda.class);
+        setTitle(resourceMap.getString("Form.title")); // NOI18N
         setName("Form"); // NOI18N
 
         porcdescCv.setName("porcdescCv"); // NOI18N
@@ -68,16 +70,8 @@ NovaVenda nv;
             }
         });
 
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(dacasaapp.DaCasaApp.class).getContext().getResourceMap(ConfirmacaoDeVenda.class);
         jLabel5.setText(resourceMap.getString("jLabel5.text")); // NOI18N
         jLabel5.setName("jLabel5"); // NOI18N
-
-        valortotalCv.setName("valortotalCv"); // NOI18N
-        valortotalCv.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                valortotalCvActionPerformed(evt);
-            }
-        });
 
         jLabel4.setText(resourceMap.getString("jLabel4.text")); // NOI18N
         jLabel4.setName("jLabel4"); // NOI18N
@@ -100,8 +94,6 @@ NovaVenda nv;
                 jButton1ActionPerformed(evt);
             }
         });
-
-        valorfinalCv.setName("valorfinalCv"); // NOI18N
 
         jLabel1.setText(resourceMap.getString("jLabel1.text")); // NOI18N
         jLabel1.setName("jLabel1"); // NOI18N
@@ -133,6 +125,14 @@ NovaVenda nv;
         jLabel9.setText(resourceMap.getString("jLabel9.text")); // NOI18N
         jLabel9.setName("jLabel9"); // NOI18N
 
+        valortotalCv.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
+        valortotalCv.setText(resourceMap.getString("valortotalCv.text")); // NOI18N
+        valortotalCv.setName("valortotalCv"); // NOI18N
+
+        valorfinalCv.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
+        valorfinalCv.setText(resourceMap.getString("valorfinalCv.text")); // NOI18N
+        valorfinalCv.setName("valorfinalCv"); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -159,11 +159,11 @@ NovaVenda nv;
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton1)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(porcdescCv)
-                                    .addComponent(valortotalCv, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(valorfinalCv)
-                                    .addComponent(formapagCv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(valortotalCv)
+                                    .addComponent(porcdescCv, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(formapagCv, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(10, 10, 10)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
@@ -176,9 +176,9 @@ NovaVenda nv;
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(valortotalCv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel3))
+                    .addComponent(jLabel3)
+                    .addComponent(valortotalCv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(porcdescCv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -186,9 +186,9 @@ NovaVenda nv;
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(valorfinalCv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
-                    .addComponent(jLabel5))
+                    .addComponent(jLabel5)
+                    .addComponent(valorfinalCv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(formapagCv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -220,10 +220,6 @@ private void porcdescCvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     valorfinalCv.setText(a-a*b/100+"");
     // TODO add your handling code here:
 }//GEN-LAST:event_porcdescCvActionPerformed
-
-private void valortotalCvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valortotalCvActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_valortotalCvActionPerformed
 
 private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 this.setVisible(false);// TODO add your handling code here:
@@ -293,7 +289,7 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField porcdescCv;
-    private javax.swing.JTextField valorfinalCv;
-    private javax.swing.JTextField valortotalCv;
+    private javax.swing.JFormattedTextField valorfinalCv;
+    private javax.swing.JFormattedTextField valortotalCv;
     // End of variables declaration//GEN-END:variables
 }

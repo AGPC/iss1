@@ -45,6 +45,8 @@ public class CalculoComissao extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(dacasaapp.DaCasaApp.class).getContext().getResourceMap(CalculoComissao.class);
+        setTitle(resourceMap.getString("Form.title")); // NOI18N
         setName("Form"); // NOI18N
 
         datainiCc.setModel(new javax.swing.SpinnerDateModel());
@@ -53,7 +55,6 @@ public class CalculoComissao extends javax.swing.JFrame {
         datafimCc.setModel(new javax.swing.SpinnerDateModel());
         datafimCc.setName("datafimCc"); // NOI18N
 
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(dacasaapp.DaCasaApp.class).getContext().getResourceMap(CalculoComissao.class);
         jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
         jLabel2.setName("jLabel2"); // NOI18N
 

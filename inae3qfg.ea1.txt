@@ -1,0 +1,24 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   nbproject/private/private.properties
+#	new file:   src/controle/ControlaCliente.java
+#	new file:   src/controle/ControlaCompra.java
+#	new file:   src/controle/ControlaProduto.java
+#	new file:   src/controle/ControlaVenda.java
+#	new file:   src/controle/ControlaVendedor.java
+#	modified:   src/dacasaapp/CadastroCliente.java
+#	modified:   src/dacasaapp/CadastroProduto.form
+#	modified:   src/dacasaapp/CadastroProduto.java
+#	modified:   src/dacasaapp/CadastroVendedor.java
+#	modified:   src/dacasaapp/ConsultaFornecedor.form
+#	modified:   src/dacasaapp/ConsultaFornecedor.java
+#	modified:   src/dacasaapp/EditarCliente.java
+#	modified:   src/dacasaapp/NovaCompra.java
+#	modified:   src/modelo/Produto.java
+#
+

@@ -19,7 +19,7 @@ public class VisualizaOrçamento extends javax.swing.JFrame {
     /** Creates new form VisualizaVenda */
     public VisualizaOrçamento() {
         initComponents();
-         jTextField1.setText("R$ 100,00");
+         valortotalVo.setText("R$ 100,00");
         vendedorVo.setText("Carlos H");
         codigoVo.setText("745");
         clienteVo.setText("Pedro");
@@ -50,7 +50,7 @@ public class VisualizaOrçamento extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        valortotalVo = new javax.swing.JFormattedTextField();
         clienteVo = new javax.swing.JTextField();
         jToggleButton1 = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
@@ -67,6 +67,8 @@ public class VisualizaOrçamento extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(dacasaapp.DaCasaApp.class).getContext().getResourceMap(VisualizaOrçamento.class);
+        setTitle(resourceMap.getString("Form.title")); // NOI18N
         setName("Form"); // NOI18N
 
         codigoVo.setEditable(false);
@@ -75,7 +77,6 @@ public class VisualizaOrçamento extends javax.swing.JFrame {
         vendedorVo.setEditable(false);
         vendedorVo.setName("vendedorVo"); // NOI18N
 
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(dacasaapp.DaCasaApp.class).getContext().getResourceMap(VisualizaOrçamento.class);
         jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
         jLabel2.setName("jLabel2"); // NOI18N
 
@@ -121,8 +122,10 @@ public class VisualizaOrçamento extends javax.swing.JFrame {
         jLabel6.setText(resourceMap.getString("jLabel6.text")); // NOI18N
         jLabel6.setName("jLabel6"); // NOI18N
 
-        jTextField1.setEditable(false);
-        jTextField1.setName("jTextField1"); // NOI18N
+        valortotalVo.setEditable(false);
+        valortotalVo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
+        valortotalVo.setText(resourceMap.getString("valortotalVo.text")); // NOI18N
+        valortotalVo.setName("valortotalVo"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -134,8 +137,8 @@ public class VisualizaOrçamento extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(valortotalVo, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 593, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         jPanel1Layout.setVerticalGroup(
@@ -148,7 +151,7 @@ public class VisualizaOrçamento extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(valortotalVo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -359,8 +362,8 @@ this.setVisible(false);
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JFormattedTextField valortotalVo;
     private javax.swing.JTextField vendedorVo;
     // End of variables declaration//GEN-END:variables
 }

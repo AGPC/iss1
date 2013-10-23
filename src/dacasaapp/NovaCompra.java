@@ -47,7 +47,7 @@ public class NovaCompra extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        valortotalNc = new javax.swing.JFormattedTextField();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         fornecedorNc = new javax.swing.JTextField();
@@ -120,8 +120,9 @@ public class NovaCompra extends javax.swing.JFrame {
             }
         });
 
-        jFormattedTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jFormattedTextField1.setName("jFormattedTextField1"); // NOI18N
+        valortotalNc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
+        valortotalNc.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        valortotalNc.setName("valortotalNc"); // NOI18N
 
         jButton3.setText(resourceMap.getString("jButton3.text")); // NOI18N
         jButton3.setName("jButton3"); // NOI18N
@@ -147,7 +148,7 @@ public class NovaCompra extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(valortotalNc, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 593, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
@@ -164,7 +165,7 @@ public class NovaCompra extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton3)
                     .addComponent(jLabel6)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(valortotalNc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -290,7 +291,7 @@ ConsultaProdutos cp=new ConsultaProdutos(this);
 private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 jTable1.setValueAt(((Double)jTable1.getValueAt(0, 1))*((Double)jTable1.getValueAt(0, 2)), 0, 3);
 jTable1.setValueAt(((Double)jTable1.getValueAt(1, 1))*((Double)jTable1.getValueAt(1, 2)), 1, 3);
-jFormattedTextField1.setText(((Double)jTable1.getValueAt(0, 3))+((Double)jTable1.getValueAt(1, 3))+"");
+valortotalNc.setText(((Double)jTable1.getValueAt(0, 3))+((Double)jTable1.getValueAt(1, 3))+"");
 //jTable1.setValueAt(((Double)jTable1.getValueAt(0, 1))*((Double)jTable1.getValueAt(0, 2)), 0, 3);// TODO add your handling code here:
 }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -299,7 +300,7 @@ Compra compra=new Compra();
 compra.setData(dataNc.getText());
 compra.setFornecedoridFornecedor(fornecedorNc.getText());
 compra.setItemcompraCollection(jTable1.getComponentListeners());
-compra.setValorTotal(jFormattedTextField1.getText());
+compra.setValorTotal(valortotalNc.getText());
 /*Compra compra = new Compra();
  compra.setData(this.dataNc);
  compra.setFornecedor(this.fornecedorNc.getNome());
@@ -370,7 +371,6 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -381,5 +381,6 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jTable1;
+    private javax.swing.JFormattedTextField valortotalNc;
     // End of variables declaration//GEN-END:variables
 }

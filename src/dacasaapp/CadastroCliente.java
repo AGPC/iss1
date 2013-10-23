@@ -13,6 +13,8 @@ import dao.DaoCliente;
 import javax.swing.JOptionPane;
 import modelo.Cliente;
 import controle.ControlaCliente;
+import dacasaapp.CadastroCliente;
+import javax.swing.JFrame;
 
 /**
  *
@@ -34,7 +36,6 @@ public class CadastroCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        cnpjCc = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -55,14 +56,18 @@ public class CadastroCliente extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         cpfCc = new javax.swing.JFormattedTextField();
+        cnpjCc = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setName("Form"); // NOI18N
-
-        cnpjCc.setEditable(false);
-        cnpjCc.setName("cnpjCc"); // NOI18N
-
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(dacasaapp.DaCasaApp.class).getContext().getResourceMap(CadastroCliente.class);
+        setTitle(resourceMap.getString("Form.title")); // NOI18N
+        setName("Form"); // NOI18N
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
+
         jLabel7.setText(resourceMap.getString("jLabel7.text")); // NOI18N
         jLabel7.setName("jLabel7"); // NOI18N
 
@@ -97,6 +102,11 @@ public class CadastroCliente extends javax.swing.JFrame {
             }
         });
 
+        try {
+            telefoneCc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         telefoneCc.setName("telefoneCc"); // NOI18N
 
         jButton2.setText(resourceMap.getString("jButton2.text")); // NOI18N
@@ -143,7 +153,19 @@ public class CadastroCliente extends javax.swing.JFrame {
         jLabel13.setName("jLabel13"); // NOI18N
 
         cpfCc.setEditable(false);
+        try {
+            cpfCc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         cpfCc.setName("cpfCc"); // NOI18N
+
+        try {
+            cnpjCc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###/####-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        cnpjCc.setName("cnpjCc"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -182,13 +204,13 @@ public class CadastroCliente extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButton1))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel7))
                                     .addGap(18, 18, 18)
-                                    .addComponent(cpfCc))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel7)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(cnpjCc, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(cnpjCc, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                                        .addComponent(cpfCc)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12)
@@ -236,8 +258,8 @@ public class CadastroCliente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(cnpjCc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13))
+                    .addComponent(jLabel13)
+                    .addComponent(cnpjCc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
@@ -299,6 +321,11 @@ jRadioButton2.doClick();
     // TODO add your handling code here:
 }//GEN-LAST:event_jRadioButton1MouseClicked
 
+private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+
+    // TODO add your handling code here:
+}//GEN-LAST:event_formWindowOpened
+
     /**
      * @param args the command line arguments
      */
@@ -331,11 +358,12 @@ jRadioButton2.doClick();
 
             public void run() {
                 new CadastroCliente().setVisible(true);
+                
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField cnpjCc;
+    private javax.swing.JFormattedTextField cnpjCc;
     private javax.swing.JTextField codigoCc;
     private javax.swing.JFormattedTextField cpfCc;
     private javax.swing.JButton jButton1;

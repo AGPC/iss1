@@ -82,6 +82,11 @@ public class CadastroVendedor extends javax.swing.JFrame {
         codigoCv.setText(resourceMap.getString("codigoCv.text")); // NOI18N
         codigoCv.setName("codigoCv"); // NOI18N
 
+        try {
+            telefoneCv.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         telefoneCv.setName("telefoneCv"); // NOI18N
 
         jLabel1.setText(resourceMap.getString("jLabel1.text")); // NOI18N
@@ -102,6 +107,11 @@ public class CadastroVendedor extends javax.swing.JFrame {
 
         loginCv.setName("loginCv"); // NOI18N
 
+        try {
+            cpfCv.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         cpfCv.setName("cpfCv"); // NOI18N
 
         jLabel5.setText(resourceMap.getString("jLabel5.text")); // NOI18N

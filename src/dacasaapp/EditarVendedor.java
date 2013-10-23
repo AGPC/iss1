@@ -38,7 +38,6 @@ public class EditarVendedor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        telefoneEv = new javax.swing.JTextField();
         codigoEv = new javax.swing.JTextField();
         senhaEv = new javax.swing.JFormattedTextField();
         loginEv = new javax.swing.JTextField();
@@ -58,11 +57,12 @@ public class EditarVendedor extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        telefoneEv = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(dacasaapp.DaCasaApp.class).getContext().getResourceMap(EditarVendedor.class);
+        setTitle(resourceMap.getString("Form.title")); // NOI18N
         setName("Form"); // NOI18N
-
-        telefoneEv.setName("telefoneEv"); // NOI18N
 
         codigoEv.setEditable(false);
         codigoEv.setName("codigoEv"); // NOI18N
@@ -71,12 +71,16 @@ public class EditarVendedor extends javax.swing.JFrame {
 
         loginEv.setName("loginEv"); // NOI18N
 
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(dacasaapp.DaCasaApp.class).getContext().getResourceMap(EditarVendedor.class);
         jLabel3.setText(resourceMap.getString("jLabel3.text")); // NOI18N
         jLabel3.setName("jLabel3"); // NOI18N
 
         nomeEv.setName("nomeEv"); // NOI18N
 
+        try {
+            cpfEv.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         cpfEv.setName("cpfEv"); // NOI18N
 
         jButton2.setText(resourceMap.getString("jButton2.text")); // NOI18N
@@ -127,6 +131,13 @@ public class EditarVendedor extends javax.swing.JFrame {
 
         jLabel12.setText(resourceMap.getString("jLabel12.text")); // NOI18N
         jLabel12.setName("jLabel12"); // NOI18N
+
+        try {
+            telefoneEv.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        telefoneEv.setName("telefoneEv"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -192,8 +203,8 @@ public class EditarVendedor extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(telefoneEv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9)))
+                            .addComponent(jLabel9)
+                            .addComponent(telefoneEv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(cpfEv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel8)))
@@ -289,6 +300,6 @@ JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
     private javax.swing.JTextField loginEv;
     private javax.swing.JTextField nomeEv;
     private javax.swing.JFormattedTextField senhaEv;
-    private javax.swing.JTextField telefoneEv;
+    private javax.swing.JFormattedTextField telefoneEv;
     // End of variables declaration//GEN-END:variables
 }
