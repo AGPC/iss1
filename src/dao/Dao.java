@@ -35,6 +35,14 @@ public class Dao <T>{
       return (T)em.find(classe, id);
  }
  
+ public List<T> getporcampo(String e,String campo){
+      return em.createQuery("Select * From" + classe.getSimpleName() + "Where" + campo + " = " + e).getResultList();
+ }
+ 
+ public List<T> getporlimite(String e,String campo1,String campo2){
+      return em.createQuery("Select * From" + classe.getSimpleName() + "Where (" +e+ ">" + campo1 + ") and (" +e+ "<" +campo2+ ")").getResultList();
+ }
+ 
 //Método para remover um registro no banco de dados a partir de um id
  public void remove(int id){
       T entidade = get(id);

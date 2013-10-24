@@ -12,9 +12,26 @@ import modelo.Cliente;
  * @author gui
  */
 public class ControlaCliente {
-    public boolean cadastraCliente(Cliente Cliente){
+    public boolean cadastraCliente(Cliente cliente){
         DaoCliente daoc= new DaoCliente();
-        daoc.insert(Cliente);
+        daoc.insert(cliente);
+        return true;    
+    
+    }
+    public boolean consultaCliente(Cliente cliente){
+        DaoCliente daoc= new DaoCliente();
+        daoc.getporcampo(cliente.getNome(),"nome");
+        return true;
+    }
+    public boolean editaCliente(Cliente cliente){
+        DaoCliente daoc= new DaoCliente();
+        daoc.update(cliente);
+        return true;    
+    
+    }
+    public boolean removeCliente(Cliente cliente){
+        DaoCliente daoc= new DaoCliente();
+        daoc.remove(cliente.getIdCliente());
         return true;    
     
     }

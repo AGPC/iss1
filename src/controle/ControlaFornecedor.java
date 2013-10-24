@@ -18,4 +18,21 @@ public class ControlaFornecedor {
         return true;    
     
     }
+    public boolean consultaFornecedor(Fornecedor fornecedor){
+        DaoFornecedor daoc= new DaoFornecedor();
+        daoc.getporcampo(fornecedor.getNome(),"nome");
+        return true;
+    }
+    public boolean editaFornecedor(Fornecedor fornecedor){
+        DaoFornecedor daoc= new DaoFornecedor();
+        daoc.update(fornecedor);
+        return true;    
+    
+    }
+    public boolean removeCliente(Fornecedor fornecedor){
+        DaoFornecedor daoc= new DaoFornecedor();
+        daoc.remove(fornecedor.getIdFornecedor());
+        return true;    
+    
+    }
 }

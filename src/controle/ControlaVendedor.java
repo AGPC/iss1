@@ -18,4 +18,22 @@ public class ControlaVendedor {
         return true;    
     
     }
+    
+    public boolean consultavendedor(Vendedor vendedor){
+        DaoVendedor daoc= new DaoVendedor();
+        daoc.getporcampo(vendedor.getNome(),"nome");
+        return true;
+    }
+    public boolean editavendedor(Vendedor vendedor){
+        DaoVendedor daoc= new DaoVendedor();
+        daoc.update(vendedor);
+        return true;    
+    
+    }
+    public boolean removevendedor(Vendedor vendedor){
+        DaoVendedor daoc= new DaoVendedor();
+        daoc.remove(vendedor.getIdVendedor());
+        return true;    
+    
+    }
 }

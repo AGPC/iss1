@@ -46,7 +46,7 @@ public class Produto implements Serializable {
     private Integer idProduto;
     @Basic(optional = false)
     @Column(name = "decricao")
-    private String decricao;
+    private String descricao;
     @Basic(optional = false)
     @Column(name = "marca")
     private String marca;
@@ -56,7 +56,7 @@ public class Produto implements Serializable {
     @Basic(optional = false)
     @Column(name = "quantidade")
     private int quantidade;
-    private String Descricao;
+    
 
     public Produto() {
     }
@@ -67,7 +67,7 @@ public class Produto implements Serializable {
 
     public Produto(Integer idProduto, String Descricao, String marca, float preco, int quantidade) {
         this.idProduto = idProduto;
-        this.Descricao = Descricao;
+        this.descricao = Descricao;
         this.marca = marca;
         this.preco = preco;
         this.quantidade = quantidade;
@@ -82,11 +82,11 @@ public class Produto implements Serializable {
     }
 
     public String getDescricao() {
-        return Descricao;
+        return descricao;
     }
 
-    public void setDescricao(String decricao) {
-        this.Descricao = Descricao;
+    public void setDescricao(String Descricao) {
+        this.descricao = Descricao;
     }
 
     public String getMarca() {

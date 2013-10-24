@@ -18,4 +18,27 @@ public class ControlaProduto {
         return true;    
     
     }
+    public boolean consultaproddescricao(Produto produto){
+        DaoProduto daoc= new DaoProduto();
+        daoc.getporcampo(produto.getDescricao(),"descricao");
+        return true;
+    }
+    public boolean consultaprodmarca(Produto produto){
+        DaoProduto daoc= new DaoProduto();
+        daoc.getporcampo(produto.getMarca(),"marca");
+        return true;
+    }
+    public boolean editaproduto(Produto produto){
+        DaoProduto daoc= new DaoProduto();
+        daoc.update(produto);
+        return true;    
+    
+    }
+    public boolean removeCliente(Produto produto){
+        DaoProduto daoc= new DaoProduto();
+        daoc.remove(produto.getIdProduto());
+        return true;    
+    
+    }
+    
 }
