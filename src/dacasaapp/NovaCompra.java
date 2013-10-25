@@ -297,10 +297,10 @@ valortotalNc.setText(((Double)jTable1.getValueAt(0, 3))+((Double)jTable1.getValu
 
 private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 Compra compra=new Compra();
-compra.setData(dataNc.getText());
-compra.setFornecedoridFornecedor(fornecedorNc.getText());
-compra.setItemcompraCollection(jTable1.getComponentListeners());
-compra.setValorTotal(valortotalNc.getText());
+//compra.setData(dataNc.getText());
+//compra.setFornecedoridFornecedor(fornecedorNc.getText());
+//compra.setItemcompraCollection(jTable1.getComponentListeners());
+//compra.setValorTotal(valortotalNc.getText());
 /*Compra compra = new Compra();
  compra.setData(this.dataNc);
  compra.setFornecedor(this.fornecedorNc.getNome());

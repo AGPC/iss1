@@ -21,7 +21,7 @@ public class EditarVenda extends javax.swing.JFrame {
     /** Creates new form EditarVenda */
      public EditarVenda() {
         initComponents();
-        jTextField1.setText("R$ 134,40");
+        //jTextField1.setText("R$ 134,40");
         vendedorEv.setText("Carlos H");
         codigoEv.setText("745");
         clienteEv.setText("João Marcus");

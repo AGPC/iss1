@@ -10,9 +10,12 @@
  */
 package dacasaapp;
 
+import controle.ControlaCompra;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-
+import modelo.Compra;
 /**
  *
  * @author Luiz
@@ -79,6 +82,11 @@ public class ConsultaCompra extends javax.swing.JFrame {
 
         jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
         jButton1.setName("jButton1"); // NOI18N
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -242,7 +250,8 @@ public class ConsultaCompra extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pack();
+        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        setBounds((screenSize.width-542)/2, (screenSize.height-387)/2, 542, 387);
     }// </editor-fold>//GEN-END:initComponents
 
 private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -256,12 +265,13 @@ this.setVisible(false);// TODO add your handling code here:
 }//GEN-LAST:event_jButton4ActionPerformed
 
 private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jTable1.setValueAt("15/11/2012", 0, 0);
+   
+    /*jTable1.setValueAt("15/11/2012", 0, 0);
         jTable1.setValueAt("AJ Rorato", 0, 1);
         jTable1.setValueAt("R$ 1330,78", 0, 2);
          jTable1.setValueAt("09/10/2012", 1, 0);
         jTable1.setValueAt("AJ Rorato", 1, 1);
-        jTable1.setValueAt("R$ 750,00", 1, 2);
+        jTable1.setValueAt("R$ 750,00", 1, 2);*/
        // TODO add your handling code here:
 }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -285,6 +295,34 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jTable1.setValueAt("", 1, 2);
     }// TODO add your handling code here:
 }//GEN-LAST:event_jButton5ActionPerformed
+
+private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+ArrayList resultado=new ArrayList();
+   Compra comp=new Compra();
+   comp.setData(null);
+   comp.setFornecedoridFornecedor(null);
+   comp.setIdCompra(1);
+   comp.setItemcompraCollection(null);
+   comp.setValorTotal(100);
+   resultado.add(comp);
+   jTable1.setValueAt(comp.getData(), 0, 0);
+   jTable1.setValueAt(comp.getFornecedoridFornecedor(), 0, 1);
+   jTable1.setValueAt(comp.getValorTotal(), 0, 2);
+  ResultSet result;
+ ControlaCompra controlador = new ControlaCompra();
+    controlador.consultaCompraForn(comp);
+   /*int i=0;
+   while(result.hasNext()){
+    jTable1.setValueAt(comp.getData(), i, 0);
+    jTable1.setValueAt(comp.getFornecedoridFornecedor(), i, 1);
+    jTable1.setValueAt(comp.getValorTotal(), i, 2);
+    i++;
+   }*/
+        
+   //fornecedorCc.setText(datainiCc.getToolTipText());
+   //System.out.print(datainiCc.toString());
+    // TODO add your handling code here:
+}//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
